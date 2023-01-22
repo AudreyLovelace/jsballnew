@@ -1,0 +1,107 @@
+:root {
+  --width: 26px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(28, var(--width));
+  grid-template-rows: var(--width);
+}
+.container div {
+  width: var(--width);
+  height: var(--width);
+}
+.pac-dot {
+  box-sizing: border-box;
+  background-color: rgba(255, 0, 0, 0.302);
+  border: 5px white solid;
+}
+.wall {
+  background-color: rgba(0, 0, 255, 0.266);
+}
+.power-pellet {
+  border-radius: 20px;
+  background-color: rgba(0, 128, 0, 0.487);
+}
+.empty {
+  background-color: rgba(255, 255, 255, 0);
+}
+.pacman {
+  width: 0;
+  height: 0;
+}
+.pacman::before,
+.pacman::after {
+  box-sizing: border-box;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 13px blue solid;
+  position: absolute;
+  border-radius: 50px;
+  border-right-color: rgba(255, 255, 255, 0);
+  transition: all ease-in-out;
+}
+.pacman::before {
+  border-bottom-color: rgba(255, 255, 255, 0);
+  animation: before 400ms infinite;
+}
+.pacman::after {
+  border-top-color: rgba(255, 255, 255, 0);
+  animation: after 400ms infinite;
+}
+
+@keyframes before {
+  50% {
+    transform: rotate(40deg);
+  }
+}
+@keyframes after {
+  50% {
+    transform: rotate(-40deg);
+  }
+}
+.black {
+  width: 0;
+  height: 0;
+}
+.black::before {
+  border: 13px black solid;
+  border-right-color: rgba(255, 255, 255, 0);
+  border-bottom-color: rgba(255, 255, 255, 0);
+}
+.black::after {
+  border: 13px black solid;
+  border-right-color: rgba(255, 255, 255, 0);
+  border-top-color: rgba(255, 255, 255, 0);
+}
+.blinky {
+  background-color: red;
+}
+.pinky {
+  background-color: palevioletred;
+}
+.inky {
+  background-color: cyan;
+}
+.clyde {
+  background-color: orange;
+}
+.lair {
+  border: 0;
+  border-radius: 0;
+}
+.scared {
+  background-color: gray;
+}
