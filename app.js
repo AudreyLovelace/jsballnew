@@ -39,7 +39,7 @@ const layout = [
 // 5 - pacman
 // console.log(Math.sqrt(layout.length));
 const body = document.querySelector("body");
-const h2 = document.querySelector("h2");
+const h2 = document.querySelector("h2 span");
 const h3 = document.querySelector("h3");
 const classes = [
   "pac-dot",
